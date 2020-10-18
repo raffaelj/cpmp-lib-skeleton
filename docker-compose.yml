@@ -1,0 +1,38 @@
+# This docker-compose file is meant for local development. Don't use it in production!
+
+version: "3.7"
+
+services:
+  cpmp:
+
+    # https://hub.docker.com/r/raffaelj/php7-apache-base
+    # https://github.com/raffaelj/dockerfiles/tree/master/php7-apache-base
+    image: raffaelj/php7-apache-base
+
+    container_name: cpmp
+
+    # let apache create files and folders with your user_id:user_group_id
+    # In my case, I'm the default user with id 1000 and I'm a member of the group with gid 1000
+    user: ${DOCKER_USER:-1000}:${DOCKER_GROUP:-1000}
+
+    volumes:
+      # mount html folder
+      # Cockpit and CpMultiplane should already be present
+      - ./:/var/www/html
+
+      # mount git repos for local development
+      #- ${COCKPIT_REPO}:/var/www/html/lib/cockpit
+      #- ${CPMULTIPLANE_REPO}:/var/www/html/lib/CpMultiplane
+
+      # mount custom files
+      #- ./.env:/var/www/html/.env
+      #- ./defines.php:/var/www/html/defines.php
+
+    ports:
+      - ${PORT:-8080}:80
+
+    # apache can't start without that fix if the user was changed
+    # see https://hub.docker.com/_/php/ (scroll down to "Running as an arbitrary user")
+    sysctls:
+      - net.ipv4.ip_unprivileged_port_start=0
+
