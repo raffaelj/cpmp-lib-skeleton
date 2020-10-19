@@ -1,0 +1,26 @@
+# ignore files in cpmp-lib-skeleton
+
+# dev files and directories
+.sass-cache
+node_modules/
+package-lock.json
+/lib/vendor/
+composer.lock
+
+# editor/os files
+*.kate-swp
+
+# changes frequently without relevant data
+cockpit.memory.sqlite
+
+# local files - either generated with composer or added manually
+# delete/modify this part in your actual project to keep everything in version control
+/lib/
+/cpdata/addons/
+/cpdata/config/
+/cpdata/storage/*/*
+/.htaccess
+/.env
+/cp
+/mp
+/Dockerfile
