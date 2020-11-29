@@ -34,7 +34,7 @@
     },
     "scripts": {
         "post-autoload-dump": [
-            "cp lib/cockpit/cp ./cp && cp ./cp ./mp",
+            "php -r \"copy('lib/cockpit/cp', './cp'); copy('./cp', './mp');\";",
             "php ./mp multiplane/update-htaccess"
         ]
     }
