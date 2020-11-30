@@ -58,7 +58,7 @@ else {
     require(COCKPIT_DIR.'/bootstrap.php');
 
     // fix broken assets paths for App.base() and App.route()
-    $cockpit->set('base_url', CPMP_COCKPIT_PATH);
+    $cockpit->set('base_url', MP_BASE_URL.CPMP_COCKPIT_PATH);
     $cockpit->on('app.layout.header', function() {
 
         $env_url = $this->pathToUrl(COCKPIT_ENV_ROOT);
