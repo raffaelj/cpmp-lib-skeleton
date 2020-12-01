@@ -12,8 +12,10 @@ if (\file_exists(__DIR__.'/defines.php')) {
     include(__DIR__.'/defines.php');
 }
 
+$BASE_URL = dirname(parse_url($_SERVER['SCRIPT_NAME'], PHP_URL_PATH));
+
 if (!defined('MP_ADMINFOLDER'))  define('MP_ADMINFOLDER',  'cockpit');
-if (!defined('MP_BASE_URL'))     define('MP_BASE_URL',  '');
+if (!defined('MP_BASE_URL'))     define('MP_BASE_URL',  $BASE_URL === '/' ? '' : $BASE_URL);
 if (!defined('COCKPIT_CLI'))     define('COCKPIT_CLI',  false);
 
 // admin route
@@ -49,14 +51,14 @@ else {
 
         define('COCKPIT_DOCS_ROOT'  , $COCKPIT_DOCS_ROOT);
     }
-    if (!defined('COCKPIT_BASE_URL'))   define('COCKPIT_BASE_URL'   , '/'.MP_ADMINFOLDER);
-    if (!defined('COCKPIT_BASE_ROUTE')) define('COCKPIT_BASE_ROUTE' , '/'.MP_ADMINFOLDER);
+    if (!defined('COCKPIT_BASE_URL'))   define('COCKPIT_BASE_URL'   , MP_BASE_URL.'/'.MP_ADMINFOLDER);
+    if (!defined('COCKPIT_BASE_ROUTE')) define('COCKPIT_BASE_ROUTE' , MP_BASE_URL.'/'.MP_ADMINFOLDER);
 
     // bootstrap cockpit
     require(COCKPIT_DIR.'/bootstrap.php');
 
     // fix broken assets paths for App.base() and App.route()
-    $cockpit->set('base_url', CPMP_COCKPIT_PATH);
+    $cockpit->set('base_url', MP_BASE_URL.CPMP_COCKPIT_PATH);
     $cockpit->on('app.layout.header', function() {
 
         $env_url = $this->pathToUrl(COCKPIT_ENV_ROOT);
