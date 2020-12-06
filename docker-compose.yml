@@ -29,7 +29,7 @@ services:
       #- ./defines.php:/var/www/html/defines.php
 
     ports:
-      - ${PORT:-8080}:80
+      - ${PORT:-127.0.0.1:8080}:80
 
     # apache can't start without that fix if the user was changed
     # see https://hub.docker.com/_/php/ (scroll down to "Running as an arbitrary user")
