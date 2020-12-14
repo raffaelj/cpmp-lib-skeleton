@@ -19,10 +19,7 @@
         }
     },
     "extra": {
-        "installer-types": [
-            "project",
-            "library"
-        ],
+        "installer-types": ["project"],
         "installer-paths": {
             "lib/{$name}": [
                 "type:project"
