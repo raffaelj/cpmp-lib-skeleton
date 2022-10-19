@@ -1,6 +1,6 @@
 {
     "name": "raffaelj/cpmp-lib-skeleton",
-    "description": "Skeleton to use CpMultiplane and Cockpit CMS as libraries with a clean root directory",
+    "description": "Skeleton to use CpMultiplane and Cockpit CMS as libraries with a clean root directory (not compatible with Cockpit CMS v2)",
     "type": "project",
     "license": "MIT",
     "authors": [

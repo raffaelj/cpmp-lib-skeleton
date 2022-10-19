@@ -1,5 +1,11 @@
 # CPMP lib skeleton
 
+**This is not compatible with Cockpit CMS v2.**
+
+See also [Cockpit CMS v1 docs](https://v1.getcockpit.com/documentation), [Cockpit CMS v1 repo](https://github.com/agentejo/cockpit) and [Cockpit CMS v2 docs](https://getcockpit.com/documentation/), [Cockpit CMS v2 repo](https://github.com/Cockpit-HQ/Cockpit).
+
+---
+
 If you want to keep your docs root clean while using [CpMultiplane][2] with [Cockpit][1], you can use this skeleton to rearrange the file structure and to include them as a library. You can use cockpit like before - with some advantages:
 
 * Add your own favicon to the root folder.
