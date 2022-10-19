@@ -27,7 +27,7 @@
             "lib/{$name}": [
                 "type:project"
             ],
-            "cpdata/addons/{$name}": [
+            "data/cp/addons/{$name}": [
                 "type:cockpit-module"
             ]
         }

@@ -21,13 +21,12 @@ define('MP_ADMINFOLDER',   'cockpit');
  * Store all config files, databases, themes etc. in a custom data directory. This way you have a well-arranged
  * data structure and you prevent Cockpit from storing files inside the lib folder.
  */
-define('COCKPIT_ENV_ROOT',  str_replace(DIRECTORY_SEPARATOR, '/', __DIR__).'/cpdata');
+define('COCKPIT_ENV_ROOT',  str_replace(DIRECTORY_SEPARATOR, '/', __DIR__).'/data/cp');
 
 /**
  * Set MP_ENV_ROOT to tell CpMultiplane where to look for the themes folder
  */
-// define('MP_ENV_ROOT',       str_replace(DIRECTORY_SEPARATOR, '/', __DIR__).'/mpdata');
-define('MP_ENV_ROOT',       str_replace(DIRECTORY_SEPARATOR, '/', __DIR__));
+define('MP_ENV_ROOT',       str_replace(DIRECTORY_SEPARATOR, '/', __DIR__).'/data/mp');
 
 /**
  * Define docs root explicitely if `$_SERVER['DOCUMENT_ROOT']` is wrong.

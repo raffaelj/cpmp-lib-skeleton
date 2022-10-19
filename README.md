@@ -20,7 +20,7 @@ This is a skeleton to start your own project. Don't clone this repository. Just 
 
 ## Relevant files
 
-Keep `index.php`, `bootstrap.php`, `defines.php` and `.htaccess.dist`. Also `cpdata/storage/data` must exist before you can run Cockpit or cli commands. You can remove the other files, if you don't need them for your workflow.
+Keep `index.php`, `bootstrap.php`, `defines.php` and `.htaccess.dist`. Also `data/cp/storage/data` must exist before you can run Cockpit or cli commands. You can remove the other files, if you don't need them for your workflow.
 
 ## File structure
 
@@ -28,24 +28,26 @@ After doing all steps described under [Installation](#installation), your file s
 
 ```text
 .
-├── cpdata
-│   ├── addons
-│   |   ├── CpMultiplaneGUI
-│   |   ├── FormValidation
-│   |   └── UniqueSlugs
-│   ├── config
-│   └── storage
-│       ├── cache
-│       ├── data
-│       ├── thumbs
-│       ├── tmp
-│       └── uploads
+├── data
+|   ├── cp
+│   |   ├── addons
+│   |   |   ├── CpMultiplaneGUI
+│   |   |   ├── FormValidation
+│   |   |   └── UniqueSlugs
+│   |   ├── config
+│   |   └── storage
+│   |       ├── cache
+│   |       ├── data
+│   |       ├── thumbs
+│   |       ├── tmp
+│   |       └── uploads
+|   └── mp
+|       └── themes
+│           └── my-child-theme
 ├── lib
 │   ├── cockpit
 │   ├── CpMultiplane
 │   └── vendor --> if installed via composer
-├── themes
-│   └── my-child-theme
 │   .htaccess
 │   bootstrap.php
 │   cp
@@ -59,7 +61,7 @@ After doing all steps described under [Installation](#installation), your file s
 
 ### manually
 
-* Use this repository as a base or copy `index.php`, `bootstrap.php`, `defines.php`, `.htaccess.dist` and `cpdata/` to your project folder.
+* Use this repository as a base or copy `index.php`, `bootstrap.php`, `defines.php`, `.htaccess.dist` and `data/` to your project folder.
 * Copy `.htaccess.dist` to `.htaccess`
 * Download CpMultiplane and extract it to `lib/CpMultiplane`.
 * Download Cockpit and extract it to `lib/cockpit`.
@@ -69,15 +71,15 @@ After doing all steps described under [Installation](#installation), your file s
 
 ### via git
 
-I expect, that you use this repo as a base or that you copy `index.php`, `bootstrap.php`, `defines.php`, `.htaccess.dist` and `cpdata/` to your project folder.
+I expect, that you use this repo as a base or that you copy `index.php`, `bootstrap.php`, `defines.php`, `.htaccess.dist` and `data/cp/` to your project folder.
 
 ```bash
 cd ~/html
 git clone https://github.com/agentejo/cockpit.git lib/cockpit
 git clone https://github.com/raffaelj/CpMultiplane.git lib/CpMultiplane
-git clone https://github.com/raffaelj/cockpit_CpMultiplaneGUI.git cpdata/addons/CpMultiplaneGUI
-git clone https://github.com/raffaelj/cockpit_FormValidation.git cpdata/addons/FormValidation
-git clone https://github.com/raffaelj/cockpit_UniqueSlugs.git cpdata/addons/UniqueSlugs
+git clone https://github.com/raffaelj/cockpit_CpMultiplaneGUI.git data/cp/addons/CpMultiplaneGUI
+git clone https://github.com/raffaelj/cockpit_FormValidation.git data/cp/addons/FormValidation
+git clone https://github.com/raffaelj/cockpit_UniqueSlugs.git data/cp/addons/UniqueSlugs
 cp .htaccess.dist .htaccess
 cp lib/cockpit/cp ./cp
 cp ./cp ./mp

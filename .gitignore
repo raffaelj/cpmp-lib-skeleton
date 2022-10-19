@@ -16,9 +16,9 @@ cockpit.memory.sqlite
 # local files - either generated with composer or added manually
 # delete/modify this part in your actual project to keep everything in version control
 /lib/
-/cpdata/addons/
-/cpdata/config/
-/cpdata/storage/*/*
+/data/cp/addons/
+/data/cp/config/
+/data/cp/storage/*/*
 /.htaccess
 /.env
 /cp
