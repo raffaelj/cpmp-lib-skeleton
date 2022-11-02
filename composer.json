@@ -10,18 +10,21 @@
         }
     ],
     "require": {
-        "raffaelj/cpmultiplane": "^0.2.4"
+        "raffaelj/cpmultiplane": "^0.3.0"
     },
     "config": {
         "vendor-dir": "lib/vendor",
         "preferred-install": {
             "*": "dist"
+        },
+        "allow-plugins": {
+            "composer/installers": true,
+            "oomphinc/composer-installers-extender": true
         }
     },
     "extra": {
         "installer-types": [
-            "project",
-            "library"
+            "project"
         ],
         "installer-paths": {
             "lib/{$name}": [
