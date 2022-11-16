@@ -9,9 +9,22 @@
             "homepage": "https://www.rlj.me"
         }
     ],
+
     "require": {
-        "raffaelj/cpmultiplane": "^0.3.0"
+        "php": "^7.3",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "composer/installers": "^1.12",
+        "oomphinc/composer-installers-extender": "^2",
+        "claviska/simpleimage": "^3.7",
+        "erusev/parsedown": "^1.7.4",
+        "aheinze/cockpit": "^0.12.2",
+        "raffaelj/cpmultiplane": "^0.3.2",
+        "raffaelj/cockpit-cpmultiplanegui": "^0.3.2",
+        "raffaelj/cockpit-uniqueslugs": "^0.5.4",
+        "raffaelj/cockpit-formvalidation": "^0.3.1"
     },
+
     "config": {
         "vendor-dir": "lib/vendor",
         "preferred-install": {
@@ -22,19 +35,15 @@
             "oomphinc/composer-installers-extender": true
         }
     },
+
     "extra": {
-        "installer-types": [
-            "project"
-        ],
+        "installer-types": ["project"],
         "installer-paths": {
-            "lib/{$name}": [
-                "type:project"
-            ],
-            "data/cp/addons/{$name}": [
-                "type:cockpit-module"
-            ]
+            "lib/{$name}": ["type:project"],
+            "data/cp/addons/{$name}": ["type:cockpit-module"]
         }
     },
+
     "scripts": {
         "post-autoload-dump": [
             "php -r \"copy('lib/cockpit/cp', './cp'); copy('./cp', './mp');\";",
