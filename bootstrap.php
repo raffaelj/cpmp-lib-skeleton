@@ -1,5 +1,8 @@
 <?php
 
+// Autoload vendor libs
+include(__DIR__.'/lib/vendor/autoload.php');
+
 if (!class_exists('DotEnv')) {
     include(__DIR__.'/lib/cockpit/lib/DotEnv.php');
 }
